@@ -19,6 +19,4 @@ short, occasional micro bits of silence in the resulting audio.
 
 Here's an example where I used the script to make a train cabin sound:
 
-Here's the [original](https://github.com/hced/WaveLab-Scripts/blob/master/Examples/Shredder2000/ExampleA_1_original_sound.wav) sound.
-Here's the same sound [processed](https://github.com/hced/WaveLab-Scripts/blob/master/Examples/Shredder2000/ExampleA_2_after_script_processing.wav) by the script.
-And here's an example final product: A [train cabin](https://github.com/hced/WaveLab-Scripts/blob/master/Examples/Shredder2000/ExampleA_3_final_product_train-cabin.wav) sound. (I made a few edits by hand, then filtered and put on some delay. Besides that, not much else.)
+This is the [original](https://github.com/hced/WaveLab-Scripts/blob/master/Examples/Shredder2000/ExampleA_1_original_sound.wav) sound. Here's the same sound [processed](https://github.com/hced/WaveLab-Scripts/blob/master/Examples/Shredder2000/ExampleA_2_after_script_processing.wav) by the script. And here's an example final product: A [train cabin](https://github.com/hced/WaveLab-Scripts/blob/master/Examples/Shredder2000/ExampleA_3_final_product_train-cabin.wav) sound. (I made a few edits by hand, then filtered and put on some delay. Besides that, not much else.) Note: It seems you can't play sound directly within GitHub, so you might need to download the files in order to hear them.
