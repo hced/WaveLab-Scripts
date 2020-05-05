@@ -5,12 +5,15 @@ Scramble2000.js – Extract the essence of your sound by shredding it into piece
 DESCRIPTION
 -----------
 This script will displace random parts of the current file, making the sound
-shattered and unrecognizable. The idea is to extract the actual 'essence' of 
-the sound. It might be a bit similar to how granulizers work, but I wanted to 
-have this functionality as a destructive function in my audio editor.
+shattered and unrecognizable. The idea of this script is to extract the actual
+'essence' of the sound. It's a bit related to how granulizers work, but I 
+wanted to have this functionality as a destructive function in my audio editor.
 
-Note: You may want to perform Correct Errors on the resulting file to reduce
-clicks and soften the cuts a bit.
+Note: You may want to perform Correct Errors on the resulting file to soften
+up hard cuts a bit. I haven't found a good way to strip silence, otherwise I 
+would have recommended doing that as well because for some reason, there's 
+short, occasional micro bits of silence in the resulting audio.
+
 
 AUTHOR
 ------
@@ -18,28 +21,26 @@ Henrik Cederblad | https://github.com/hced
 
 COMPATIBILITY
 -------------
-Developed for WaveLab Pro 10+. May or may not work in lower WaveLab versions.
+Works in WaveLab Pro 10+. May or may not work in lower WaveLab versions.
 
 VERSION HISTORY
 ---------------
-0.1 - First functional version. Removed commented pseudo-code.
+0.1 - First functional version. Removed commented pseudo-code. There's some
+corrections to be made, probably in the selection procedure, because somehow
+the audiofile gets slightly longer every time you run the script against it.
 0.1a - Initial version
 
 -----------------------------------------------------------------------------*/
 
 const FILELENGTH = activeWave.size(); // Total samples
-const SNAPSHOTLENGTH = (FILELENGTH/100)*5; // 5% of the total length
-const REPS = 200; // Todo: Make exponential, maybe via Math.pow( (FILELENGTH/100), 3 ) ?
+const SNAPSHOTLENGTH = (FILELENGTH/100)*5; // 5% of total samples
+const REPS = 200;
 
-/* Debug */
-// Log timestamp
+// Debug
 logWindow.clear();
 var TS = new Date();
-function timeStamp() {
-	return TS.toISOString();
-}
-logWindow.printInfo(timeStamp());
-// Log total length in samples of the active file
+function timeStamp() { return TS.toISOString(); }
+logWindow.printInfo(timeStamp()); // Log timestamp
 logWindow.printInfo("This file has a total of " + FILELENGTH + " samples");
 
 function randomPos(min, max) {
@@ -73,8 +74,7 @@ function Scramble() {
 	
 }
 
-// Repeat Scramble() for REPS amount of times
+// Repeat the process according to number of times defined in REPS
 for (i = 0; i < REPS; i++) {
-	logWindow.printInfo("This is scramble " + i + " at sample location:"); // Debug
 	Scramble();
 }
